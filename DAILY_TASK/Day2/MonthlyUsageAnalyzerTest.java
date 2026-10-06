@@ -1,3 +1,5 @@
+package Day2;
+
 public class MonthlyUsageAnalyzerTest {
     public static void main(String[] args) {
         int[] monthlyUsage = { 120, 135, 150, 145, 160, 175, 190, 180, 170, 165, 155, 145 };

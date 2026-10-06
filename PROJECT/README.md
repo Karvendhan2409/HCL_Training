@@ -25,8 +25,8 @@ This repository contains Java language fundamentals and Git workflow exercises f
 
 ```powershell
 javac -d out DAILY_TASK/Day2/*.java
-java -cp out MonthlyUsageAnalyzerTest
-java -cp out LanguageFundamentalsDemo
+java -cp out Day2.MonthlyUsageAnalyzerTest
+java -cp out Day2.LanguageFundamentalsDemo
 ```
 
 ## Git workflow

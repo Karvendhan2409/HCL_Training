@@ -1,3 +1,5 @@
+package Day2;
+
 public final class Constants {
     private Constants() {
     }
