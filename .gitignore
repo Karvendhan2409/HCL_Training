@@ -1,0 +1,25 @@
+# Java
+*.class
+*.log
+out/
+target/
+
+# VS Code and IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# GitHub / local secrets
+.env
+*.pem
+*.key
+!**/id_rsa.pub
+
+# Build and coverage output
+build/
+coverage/
+coverage-report/
