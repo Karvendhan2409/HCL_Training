@@ -1,21 +1,32 @@
-# Day 3 — Maven NGO Management
+# Day 3 — ATM Simulator
 
-This task introduces Maven through a small Java application for tracking NGO donations and volunteers.
+This task introduces a Maven-based ATM simulator with PIN authentication, deposits, withdrawals, mini statements, input validation, and development/production profiles.
 
 ## Project
 
-- `ngo-management/` — Maven project containing the console app, build configuration, and project-specific instructions.
-- `ngo-management/src/main/java/com/ngo/App.java` — records donations and volunteers and displays an in-memory summary.
-- `ngo-management/pom.xml` — identifies the Maven project and configures Java compilation and application execution.
+- `atm-simulator/` — Maven project containing the ATM simulator, build configuration, tests, and project-specific instructions.
+- `atm-simulator/src/main/java/com/atm/AtmSimulator.java` — provides the ATM menu and transaction operations.
+- `atm-simulator/pom.xml` — configures Java compilation, testing, packaging, and Maven profiles.
 
 ## Run
 
 From the project directory:
 
 ```powershell
-cd DAILY_TASK/Day3/ngo-management
+cd DAILY_TASK/Day3/atm-simulator
 mvn clean package
 mvn exec:java
 ```
 
-See [ngo-management/README.md](ngo-management/README.md) for requirements, menu behavior, and an explanation of Maven's project configuration and lifecycle.
+The default PIN is `1234`. The simulator supports deposit, withdrawal, mini-statement, and exit options.
+
+See [atm-simulator/README.md](atm-simulator/README.md) for the complete menu, profile, and build information.
+
+## Profiles
+
+```powershell
+mvn clean package -Pdev
+mvn clean package -Pprod
+```
+
+The default profile uses `dev`. The `prod` profile changes the configured ATM mode to `prod`.
