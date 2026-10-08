@@ -10,12 +10,13 @@ This task introduces a Maven-based ATM simulator with PIN authentication, deposi
 
 ## Run
 
-From the project directory:
+From the repository root:
 
 ```powershell
-cd DAILY_TASK/Day3/atm-simulator
-mvn clean package
-mvn exec:java
+Set-Location "DAILY_TASK/Day3/atm-simulator"
+$mvn = "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd"
+& $mvn clean package
+& $mvn exec:java
 ```
 
 The default PIN is `1234`. The simulator supports deposit, withdrawal, mini-statement, and exit options.
@@ -25,8 +26,8 @@ See [atm-simulator/README.md](atm-simulator/README.md) for the complete menu, pr
 ## Profiles
 
 ```powershell
-mvn clean package -Pdev
-mvn clean package -Pprod
+& $mvn clean package -Pdev
+& $mvn clean package -Pprod
 ```
 
 The default profile uses `dev`. The `prod` profile changes the configured ATM mode to `prod`.
