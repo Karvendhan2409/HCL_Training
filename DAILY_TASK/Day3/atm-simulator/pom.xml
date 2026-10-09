@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <atm.mode>dev</atm.mode>
         <atm.initialBalance>1000.00</atm.initialBalance>
         <junit.version>5.10.2</junit.version>

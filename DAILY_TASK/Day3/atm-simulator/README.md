@@ -4,7 +4,7 @@ A Java console ATM simulator for deposits, withdrawals, PIN authentication, mini
 
 ## Requirements
 
-- JDK 8 or newer
+- JDK 25 or newer
 - Apache Maven 3.6 or newer
 
 ## Build and run
