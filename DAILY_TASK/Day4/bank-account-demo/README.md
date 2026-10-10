@@ -7,7 +7,7 @@ This project demonstrates a BankAccount model, service, and application package 
 ```powershell
 cd C:\Users\DELL\Downloads\HCL_HACKATHON_TRAINING\DAILY_TASK\Day4\bank-account-demo
 mvn clean package
-mvn exec:java
+mvn exec:javacd
 ```
 
 ## Debugging exercise

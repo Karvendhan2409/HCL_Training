@@ -15,7 +15,7 @@ Run these commands from the `DAILY_TASK/Day3/atm-simulator` directory:
 ```powershell
 cd C:\Users\DELL\Downloads\HCL_HACKATHON_TRAINING\DAILY_TASK\Day3\atm-simulator
 mvn clean package
-mvn exec:javacd
+mvn exec:java
 ```
 
 The application supports these menu options:
