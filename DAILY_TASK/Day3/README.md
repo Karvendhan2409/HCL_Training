@@ -11,10 +11,11 @@ A Java console ATM simulator for deposits, withdrawals, PIN authentication, mini
 
 Run these commands from the `DAILY_TASK/Day3/atm-simulator` directory:
 
+
 ```powershell
-$mvn = "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd"
-& $mvn clean package
-& $mvn exec:java
+cd C:\Users\DELL\Downloads\HCL_HACKATHON_TRAINING\DAILY_TASK\Day3\atm-simulator
+mvn clean package
+mvn exec:javacd
 ```
 
 The application supports these menu options:
