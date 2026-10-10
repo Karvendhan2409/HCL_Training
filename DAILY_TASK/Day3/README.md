@@ -4,17 +4,18 @@ A Java console ATM simulator for deposits, withdrawals, PIN authentication, mini
 
 ## Requirements
 
-- JDK 25 or newer
+- JDK 8 or newer
 - Apache Maven 3.6 or newer
 
 ## Build and run
 
 Run these commands from the `DAILY_TASK/Day3/atm-simulator` directory:
 
-##command to run:
-cd .\DAILY_TASK\Day3\atm-simulator
-mvn clean package
-mvn exec:java
+```powershell
+$mvn = "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd"
+& $mvn clean package
+& $mvn exec:java
+```
 
 The application supports these menu options:
 
