@@ -5,8 +5,9 @@ This project demonstrates a BankAccount model, service, and application package 
 ## Run
 
 ```powershell
-& "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd" clean test
-& "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd" exec:java -Dexec.mainClass=com.atm.app.BankAccountApp
+cd C:\Users\DELL\Downloads\HCL_HACKATHON_TRAINING\DAILY_TASK\Day4\bank-account-demo
+mvn clean package
+mvn exec:java
 ```
 
 ## Debugging exercise
