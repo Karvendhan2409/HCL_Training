@@ -7,14 +7,15 @@ public class commit {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int balance = 5000;
         int choice;
+        int total = 0;
+        int[] marks = new int[3];
 
         do {
-            System.out.println("\n--- ATM Simulator ---");
-            System.out.println("1. Check Balance");
-            System.out.println("2. Deposit Money");
-            System.out.println("3. Withdraw Money");
+            System.out.println("\n--- Student Marks System ---");
+            System.out.println("1. Enter Marks");
+            System.out.println("2. Display Total");
+            System.out.println("3. Display Average");
             System.out.println("4. Exit");
             System.out.print("Enter choice: ");
 
@@ -22,31 +23,28 @@ public class commit {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Balance: Rs." + balance);
+                    total = 0;
+
+                    for (int i = 0; i < 3; i++) {
+                        System.out.print("Enter subject " + (i + 1) + " marks: ");
+                        marks[i] = sc.nextInt();
+
+                        if (marks[i] < 0 || marks[i] > 100) {
+                            System.out.println("Invalid marks! Enter 0 to 100.");
+                            i--;
+                        } else {
+                            total += marks[i];
+                        }
+                    }
+                    System.out.println("Marks saved successfully!");
                     break;
 
                 case 2:
-                    System.out.print("Enter deposit amount: ");
-                    int deposit = sc.nextInt();
-
-                    if (deposit > 0) {
-                        balance += deposit;
-                        System.out.println("Deposit successful!");
-                    } else {
-                        System.out.println("Invalid amount!");
-                    }
+                    System.out.println("Total Marks: " + total);
                     break;
 
                 case 3:
-                    System.out.print("Enter withdrawal amount: ");
-                    int withdraw = sc.nextInt();
-
-                    if (withdraw > 0 && withdraw <= balance) {
-                        balance -= withdraw;
-                        System.out.println("Withdrawal successful!");
-                    } else {
-                        System.out.println("Invalid amount or insufficient balance!");
-                    }
+                    System.out.println("Average: " + (total / 3.0));
                     break;
 
                 case 4:
