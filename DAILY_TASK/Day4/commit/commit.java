@@ -7,6 +7,6 @@ public class commit {
 
         int sum = a + b;
 
-        System.out.println("Addition = " + sum);
+        System.out.println("Sum = " + sum);
     }
 }
