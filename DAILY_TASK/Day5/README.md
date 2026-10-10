@@ -15,6 +15,6 @@ This exercise demonstrates abstract classes, interfaces, inheritance, method ove
 From the repository root in PowerShell:
 
 ```powershell
-javac -d out DAILY_TASK/Day5/PaymentDemo.java
+javac -d out PaymentDemo.java
 java -cp out PaymentDemo
 ```
