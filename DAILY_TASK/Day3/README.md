@@ -1,33 +1,39 @@
-# Day 3 — ATM Simulator
+# ATM Simulator
 
-This task introduces a Maven-based ATM simulator with PIN authentication, deposits, withdrawals, mini statements, input validation, and development/production profiles.
+A Java console ATM simulator for deposits, withdrawals, PIN authentication, mini statements, and profile-based environment settings.
 
-## Project
+## Requirements
 
-- `atm-simulator/` — Maven project containing the ATM simulator, build configuration, tests, and project-specific instructions.
-- `atm-simulator/src/main/java/com/atm/AtmSimulator.java` — provides the ATM menu and transaction operations.
-- `atm-simulator/pom.xml` — configures Java compilation, testing, packaging, and Maven profiles.
+- JDK 25 or newer
+- Apache Maven 3.6 or newer
 
-## Run
+## Build and run
 
-From the repository root:
+Run these commands from the `DAILY_TASK/Day3/atm-simulator` directory:
 
-```powershell
-Set-Location "DAILY_TASK/Day3/atm-simulator"
-$mvn = "C:\Users\DELL\apache-maven-3.9.9\bin\mvn.cmd"
-& $mvn clean package
-& $mvn exec:java
-```
+##command to run:
+cd .\DAILY_TASK\Day3\atm-simulator
+mvn clean package
+mvn exec:java
 
-The default PIN is `1234`. The simulator supports deposit, withdrawal, mini-statement, and exit options.
+The application supports these menu options:
 
-See [atm-simulator/README.md](atm-simulator/README.md) for the complete menu, profile, and build information.
+1. Deposit money
+2. Withdraw money
+3. View mini statement
+4. Exit
+
+The PIN is `1234`. Invalid PIN attempts are limited to three.
 
 ## Profiles
 
+- `dev` — development environment
+- `prod` — production environment
+
+Run a production build with:
+
 ```powershell
-& $mvn clean package -Pdev
 & $mvn clean package -Pprod
 ```
 
-The default profile uses `dev`. The `prod` profile changes the configured ATM mode to `prod`.
+
