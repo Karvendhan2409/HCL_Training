@@ -13,6 +13,17 @@ java -cp out OrderProcessorDemo
 
 The demo processes one valid order and two rejected orders. The rejected orders print full stack traces: one for invalid text input and one for insufficient stock. Each order also prints an audit line from `finally`.
 
+### Run `example.java`
+
+This separate example reads two integers and divides the first by the second. From the same folder, compile and run it with:
+
+```powershell
+javac -d out example.java
+java -cp out Day6.example
+```
+
+The class belongs to the `Day6` package, so run it using the fully qualified name `Day6.example`. When prompted, enter two integers, such as `10 2`; the program prints `5`. A zero divisor is handled by its `ArithmeticException` catch block.
+
 ## Copilot Chat Stack-Trace Review
 
 Copy each rejected-order output, including its complete stack trace and every `Caused by` section, into Copilot Chat. Ask Copilot to explain where the error originated, how the cause chain works, which exception is checked or unchecked, and whether the audit runs. Record its answer below; do not omit or rewrite parts you disagree with.
