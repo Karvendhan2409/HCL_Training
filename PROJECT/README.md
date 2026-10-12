@@ -24,51 +24,97 @@ The initial version focuses on recording donations and managing core NGO informa
 
 Role permissions will be enforced by the backend. Volunteer applications and donations that need review will have explicit statuses rather than being treated as approved automatically.
 
-## Planned Features
+## Functional Requirements
 
-### Accounts and Profiles
+Functional requirements describe what the system must do. These are proposed requirements; features will be implemented in phases.
 
-- Register donor and volunteer accounts and sign in with email and password.
-- Maintain user profiles and volunteer skills, interests, and availability.
-- Support role-based permissions for admins, donors, volunteers, and coordinators.
-- Allow authorized staff to approve or reject volunteer applications.
+### FR1. User Accounts and Access
 
-### Donations and Campaigns
+- The system shall allow donors and volunteers to register and sign in using an email address and password.
+- The system shall allow users to view and update their profiles.
+- The system shall provide role-based permissions for admins, donors, volunteers, and NGO coordinators.
+- The system shall allow authorized staff to approve or reject volunteer applications.
 
-- Record donation amount, donor, date, purpose, and optional campaign.
-- Validate donation data and retain a donation history.
-- Show donation totals and provide a donation receipt record.
-- Associate campaigns with target amounts, dates, and a status.
+### FR2. Donation Management
 
-The first version records donations; it does not need to collect payment card details. If online payments are added later, use a payment provider in test mode and store only the provider's transaction reference and payment status. Never store card numbers or CVVs.
+- The system shall allow an authorized user to record a donation's donor, amount, date, purpose, and optional campaign.
+- The system shall validate donation data and retain donation history.
+- The system shall allow a donor to view their own donation history and receipt records.
+- The system shall allow authorized admins to view donation records and totals.
 
-### Events and Volunteer Participation
+The initial version records donations and does not need to process online payments. If online payments are added later, the system shall use a payment provider and store only its transaction reference and payment status. It shall never store card numbers or CVVs.
 
-- Create events with a title, description, location, date, capacity, and status.
-- Let volunteers register for events, subject to capacity and registration rules.
-- Let coordinators review registrations and record attendance.
-- Show upcoming and completed events and volunteer participation history.
+### FR3. Volunteer Management
 
-### Notifications and Reports
+- The system shall store a volunteer's skills, interests, and availability.
+- The system shall allow authorized staff to approve or reject volunteer applications.
+- The system shall show a volunteer their event participation history.
 
-- Plan for email confirmations, donation receipts, event reminders, and approval decisions.
-- Provide dashboards for donation totals, volunteer counts, and event activity.
-- Generate monthly donation and volunteer activity reports.
+### FR4. Campaign and Event Management
 
-Email and advanced reporting are later-phase features unless required for the initial release.
+- The system shall allow authorized coordinators to create and update campaigns with target amounts, dates, and statuses.
+- The system shall allow authorized coordinators to create events with a title, description, location, date, capacity, and status.
+- The system shall allow volunteers to register for events when registration rules and capacity permit.
+- The system shall allow coordinators to review registrations and record attendance.
+- The system shall show upcoming and completed events.
 
-## Quality Requirements
+### FR5. Notifications
 
-| Area | Requirement |
-| --- | --- |
-| Security and privacy | Hash passwords; enforce authorization on private operations; limit access to personal details and donation histories. |
-| Data integrity | Validate amounts and required fields, prevent duplicate records where appropriate, and enforce event capacity. |
-| Reliability | Handle failed operations safely and protect saved donation records from loss. |
-| Performance | Keep pages and API responses within an agreed response-time target under normal usage. |
-| Scalability | Keep the design able to support growth in donors, volunteers, and events. |
-| Usability | Provide clear, straightforward workflows for users with different levels of technical experience. |
-| Maintainability | Separate API handling, business rules, persistence, and data-transfer types into distinct layers. |
-| Availability and recovery | Plan reliable deployment, regular database backups, and a recovery process. |
+- The system shall be able to send registration confirmations, donation receipts, event reminders, and volunteer application decisions.
+- Email notifications are planned for a later phase unless they are selected as an initial-release requirement.
+
+### FR6. Dashboard and Reports
+
+- The system shall display donation totals, registered volunteer counts, and upcoming and completed events to authorized users.
+- The system shall support monthly donation and volunteer activity reports.
+- Advanced dashboard and reporting features are planned for a later phase unless selected for the initial release.
+
+## Non-Functional Requirements
+
+Non-functional requirements describe how securely, reliably, and effectively the system must operate. Targets that depend on deployment size or hosting environment must be agreed before release testing.
+
+### NFR1. Security and Privacy
+
+- The system shall store password hashes, never plain-text passwords.
+- The backend shall authenticate users and authorize every private operation according to role.
+- Users shall only be able to view personal information and donation histories they are permitted to access.
+
+### NFR2. Data Integrity
+
+- The system shall validate required fields and reject invalid or non-positive donation amounts.
+- The system shall enforce event capacity and prevent duplicate registrations where applicable.
+- Related records shall use database constraints, such as foreign keys, where appropriate.
+
+### NFR3. Reliability
+
+- The system shall handle failed operations without reporting them as successful.
+- A failed request shall not leave partially saved donation or registration data.
+- Persisted donation records shall be protected by regular database backups.
+
+### NFR4. Performance
+
+- Under normal expected usage, pages and API requests shall respond within an agreed response-time target.
+- The team shall define and test the response-time target against the intended deployment environment before release.
+
+### NFR5. Usability
+
+- The interface shall provide clear, consistent workflows for donors, volunteers, admins, and coordinators.
+- Forms shall identify required fields and explain validation errors in understandable language.
+
+### NFR6. Maintainability
+
+- The backend shall separate HTTP handling, business logic, persistence, and API data-transfer types into controller, service, repository, and DTO layers.
+- The project shall include automated tests for important business rules and API behavior.
+
+### NFR7. Scalability
+
+- The application shall use a modular design and database-backed persistence so it can support growth in donors, volunteers, campaigns, and events.
+- Capacity expectations shall be defined and tested before production deployment.
+
+### NFR8. Availability and Recovery
+
+- The deployment plan shall define availability expectations, backup frequency, and recovery procedures.
+- Database backups shall be tested to confirm that records can be restored.
 
 ## Proposed Technology Stack
 
